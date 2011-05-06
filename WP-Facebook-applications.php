@@ -39,6 +39,7 @@ function werewp_fbapp_post_type() {
 		'taxonomies' => array( 'app_id', 'app_secret', 'app_fbcomments' ),
 		)
 	);
+	flush_rewrite_rules();
 }
 add_action( 'init', 'werewp_fbapp_post_type' );
 
