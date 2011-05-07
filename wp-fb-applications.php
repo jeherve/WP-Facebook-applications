@@ -63,6 +63,15 @@ add_action( 'init', 'werewp_fbapp_post_type' );
 // Add support for thumbnails
 add_post_type_support( 'werewp_fbapp', 'thumbnail' );
 
+// Register thumbnails
+function werewp_fbapps_thumbnails() {
+	add_theme_support( 'post-thumbnails' );
+	if ( function_exists( 'add_image_size' ) ) {
+    	add_image_size( 'fb-nonfans', 520, 2000, true ); // Facebook applications thumbnails
+	}
+}
+add_action( 'after_setup_theme', 'werewp_fbapps_thumbnails' );
+
 
 /*
  * Customize our Edit Custom type panel to be able to
@@ -103,12 +112,11 @@ function appparameters() {
 }
  
 function werewp_save_details(){
-
 	global $post;
  
-	update_post_meta($post->ID, "appid", $_POST["appid"]);
-	update_post_meta($post->ID, "appsecret", $_POST["appsecret"]);
-	update_post_meta($post->ID, "fbcomments", $_POST["fbcomments"]);
+	update_post_meta($post->ID, 'appid', $_POST['appid']);
+	update_post_meta($post->ID, 'appsecret', $_POST['appsecret']);
+	update_post_meta($post->ID, 'fbcomments', $_POST['fbcomments']);
 }
 add_action( 'save_post', 'werewp_save_details' );
 
@@ -165,7 +173,6 @@ add_action( 'template_redirect', 'werewp_fbapp_template' );
 
 // Load specific css for custom post type
 function werewp_fbapps_style() {
-
 	$fbapps_style = WPFBAPPS_URL . 'css/fblayout.css';
 	
 	if ( 'werewp_fbapp' == get_post_type() ) { 
