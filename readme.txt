@@ -1,6 +1,6 @@
 === WP-Facebook applications ===
 Contributors: jeherve
-Tags: facebook, application, campaign, tab, custom post type, taxonomy
+Tags: facebook, application, campaign, tab, custom post type, custom fields
 Requires at least: 3.0
 Tested up to: 3.2
 Stable tag: 0.1
@@ -18,3 +18,5 @@ Jeremy.tagada.hu ([http://jeremy.tagada.hu](http://jeremy.tagada.hu))
 = Work in progress =
 
 This plugin is a work in progress. Do not hesitate to jump in and propose changes, give your remarks directly on github.com
+
+Please note that this plugin uses the Facebook PHP SDK (https://github.com/facebook/php-sdk)

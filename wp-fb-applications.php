@@ -6,7 +6,25 @@ Plugin URI: http://jeremy.tagada.hu
 Description: Create custom tabs for your Facebook pages, hosted on your WordPress blog.
 Author: Jeremy Herve
 Author URI: http://jeremy.tagada.hu
+License: GPL2
 */
+/*  Copyright 2011 Jeremy Herve (email : jeremy@tagada.hu)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+?>
+<?php 
 
 define( 'WPFBAPPS_URL', plugin_dir_url(__FILE__) );
 
@@ -14,7 +32,6 @@ define( 'WPFBAPPS_URL', plugin_dir_url(__FILE__) );
  * Create a new post type for Facebook iFrame applications
  * within our theme
  */
- 
 // Create applications custom post type 
 function werewp_fbapp_post_type() {
 	register_post_type( 'werewp_fbapp',
@@ -47,7 +64,23 @@ add_action( 'init', 'werewp_fbapp_post_type' );
 add_post_type_support( 'werewp_fbapp', 'thumbnail' );
 
 
-// Add metaboxes 
+/*
+ * Customize our Edit Custom type panel to be able to
+ * entre Facebook application settings
+ */
+// Change Enter the title prompt on page
+function werewp_fbapp_title( $title ){
+     $screen = get_current_screen();
+ 
+     if  ( 'werewp_fbapp' == $screen->post_type ) {
+          $title = 'Enter the name of your Facebook tab';
+     }
+ 
+     return $title;
+} 
+add_filter( 'enter_title_here', 'werewp_fbapp_title' );
+
+// Add metaboxes with custom fields
 function werewp_fbapps_metaboxes(){
 	add_meta_box( 'appid_meta', 'Application parameters', 'appparameters', 'werewp_fbapp', 'normal', 'low' );
 }
@@ -109,6 +142,10 @@ function werewp_fbapp_custom_columns($column){
 add_action( 'manage_posts_custom_column', 'werewp_fbapp_custom_columns' );
 
 
+/*
+ * Customize the display of the custom post type
+ * on the frontend
+ */
 // Do not allow indexing of the application pages
 function werewp_fbapps_robots() {
 	if ( 'werewp_fbapp' == get_post_type() ) { ?>
@@ -117,20 +154,24 @@ function werewp_fbapps_robots() {
 }
 add_action( 'wp_head', 'werewp_fbapps_robots' );
 
-/*
- * Customize the edit page panel
- */
+// Load specific template page for custom post type
+function werewp_fbapp_template() {
+    if ( 'werewp_fbapp' == get_post_type() ) {
+        include( 'template.php' );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'werewp_fbapp_template' );
 
-// Change Enter the title prompt on page
-function werewp_fbapp_title( $title ){
-     $screen = get_current_screen();
- 
-     if  ( 'werewp_fbapp' == $screen->post_type ) {
-          $title = 'Enter the name of your Facebook tab';
-     }
- 
-     return $title;
-} 
-add_filter( 'enter_title_here', 'werewp_fbapp_title' );
+// Load specific css for custom post type
+function werewp_fbapps_style() {
 
+	$fbapps_style = WPFBAPPS_URL . 'css/fblayout.css';
+	
+	if ( 'werewp_fbapp' == get_post_type() ) { 
+		wp_register_style('werewp-fbapps', $fbapps_style);
+        wp_enqueue_style( 'werewp-fbapps');
+	}
+}
+add_action( 'wp_print_styles', 'werewp_fbapps_style' );
 ?>
