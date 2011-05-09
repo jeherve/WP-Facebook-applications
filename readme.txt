@@ -1,10 +1,10 @@
 === WP-Facebook applications ===
-Contributors: jeherve
+Contributors: hd-J
 Donate link: http://jeremy.tagada.hu
 Tags: facebook, application, campaign, tab, custom post type, custom fields
 Requires at least: 3.0
 Tested up to: 3.2
-Stable tag: 0.1
+Stable tag: 0.2
 
 Create custom tabs for your Facebook pages, hosted on your WordPress blog.
 
@@ -35,8 +35,8 @@ Please note that this plugin uses the [Facebook PHP SDK](https://github.com/face
 
 == Screenshots ==
 
-1. Applications menu in your WordPress install `/tags/0.1/img/screenshot-1.png`
-2. Create new application `/tags/0.1/img/screenshot-2.png`
+1. Applications menu in your WordPress install `/tags/0.2/img/screenshot-1.png`
+2. Create new application `/tags/0.2/img/screenshot-2.png`
 
 == Frequently Asked Questions ==
 
@@ -49,6 +49,9 @@ One of the images or one of the videos you have added to your page is too large 
 The only way to solve the issue is to buy an SSL certificate for your domain, and once set, fill in the secure URL for your tab in the applications settings.
 
 == Changelog ==
+
+= 0.2 =
+* Move files to trunk root to get the plugin to work, beginner's mistake
 
 = 0.1 =
 * Initial release
