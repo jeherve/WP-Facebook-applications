@@ -24,19 +24,19 @@ Please note that this plugin uses the [Facebook PHP SDK](https://github.com/face
 
 = How to create my first Facebook tab? =
 
-1. Go to the 'Add new' menu of your Applications menu.
-2. [Create a new Facebook application on Facebook:](http://www.facebook.com/developers/createapp.php "Create new application")
+1. Go to the *Add new* menu of your Applications menu.
+2. [Create a new Facebook application on Facebook](http://www.facebook.com/developers/createapp.php "Create new application")
 3. Now that the application is created, you have received an application ID and an application secret. Paste these 2 values into the dedicated fields of your WordPress application page.
 4. If you want a Facebook Comments box at the bottom of your content, simply specify how many comments do you want the box to show by default.
 5. Enter content that will appear when the user is fan in the content area.
-6. Upload the image to see when the user is not a fan, and set this image as 'featured image'.
+6. Upload the image to see when the user is not a fan, and set this image as *featured image*.
 7. Publish this page, note down the URL and change your Facebook application settings to point to that URL.
 8. You're done, enjoy!
 
 == Screenshots ==
 
-1. Applications menu in your WordPress install `/tags/0.2/img/screenshot-1.png`
-2. Create new application `/tags/0.2/img/screenshot-2.png`
+1. Applications menu in your WordPress install
+2. Create new application
 
 == Frequently Asked Questions ==
 
