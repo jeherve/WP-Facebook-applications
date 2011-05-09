@@ -181,4 +181,14 @@ function werewp_fbapps_style() {
 	}
 }
 add_action( 'wp_print_styles', 'werewp_fbapps_style' );
+
+// Restrict the width of the embedded media to 488px
+function werewp_fbapps_embed( $embed_size ) {
+    if ( 'werewp_fbapp' == get_post_type() ) { 
+        $embed_size['width'] = 488;
+        $embed_size['height'] = 600;
+    }
+    return $embed_size;
+}
+add_filter( 'embed_defaults', 'werewp_fbapps_embed' );
 ?>
