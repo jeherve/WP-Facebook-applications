@@ -42,7 +42,7 @@ Please note that this plugin uses the [Facebook PHP SDK](https://github.com/face
 
 = How to avoid the scrollbars that show up when I view my tab on Facebook? =
 
-One of the images or one of the videos you have added to your page is too large to fit in the page. All the elements you include in your content should not be larger than 488 pixels.
+One of the images you have added to your page is too large to fit in the page. All the elements you include in your content should not be larger than 488 pixels.
 
 = When viewing my application tab on Facebook, I get a blank page, or a message telling me to switch to a HTTPS connection =
 
