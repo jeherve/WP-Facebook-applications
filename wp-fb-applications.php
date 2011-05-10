@@ -91,24 +91,34 @@ add_filter( 'enter_title_here', 'werewp_fbapp_title' );
 
 // Add metaboxes with custom fields
 function werewp_fbapps_metaboxes(){
-	add_meta_box( 'appid_meta', 'Application parameters', 'appparameters', 'werewp_fbapp', 'normal', 'low' );
+	add_meta_box( 'appid_meta', 'Application parameters', 'werewp_fbappappparameters', 'werewp_fbapp', 'advanced', 'core' );
 }
 add_action( 'admin_init', 'werewp_fbapps_metaboxes' );
  
-function appparameters() {
-  global $post;
-  $custom = get_post_custom($post->ID);
-  $appid = $custom['appid'][0];
-  $appsecret = $custom['appsecret'][0];
-  $fbcomments = $custom['fbcomments'][0];
-  ?>
-  <p><label>Application ID:</label><br />
-  <textarea cols="50" rows="1" name="appid"><?php echo $appid; ?></textarea></p>
-  <p><label>Application Secret:</label><br />
-  <textarea cols="50" rows="1" name="appsecret"><?php echo $appsecret; ?></textarea></p>
-  <p><label>Number of Facebook comments displayed (leave empty if you do not wish to have this feature enabled):</label><br />
-  <textarea cols="1" rows="1" name="fbcomments"><?php echo $fbcomments; ?></textarea></p>
-  <?php
+function werewp_fbappappparameters() {
+  	global $post;
+ 	$custom = get_post_custom($post->ID);
+ 	$appid = $custom['appid'][0];
+ 	$appsecret = $custom['appsecret'][0];
+ 	$fbcomments = $custom['fbcomments'][0];
+ 	?>
+ 	<h3>Create your application on Facebook</h3>
+	<p>Before to start creating content, you must create an application on Facebook : <a href="http://www.facebook.com/developers/createapp.php" target="_blank">Create application</a>. Once it is done, provide a description and icons to that application. Then, in the <strong>Web Site</strong> tab, fill in with your website's URL.</p>
+	<h3>Fill it application details</h3>
+	<p>You now have the necessary information to fill in the parameters below:</p>
+ 	<p><label><strong>Application ID:</strong></label><br />
+ 	<textarea cols="50" rows="1" name="appid"><?php echo $appid; ?></textarea></p>
+ 	<p><label><strong>Application Secret:</strong></label><br />
+ 	<textarea cols="50" rows="1" name="appsecret"><?php echo $appsecret; ?></textarea></p>
+ 	<p><label><strong>Number of Facebook comments displayed</strong> (leave empty if you do not wish to have this feature enabled):</label><br />
+ 	<textarea cols="1" rows="1" name="fbcomments"><?php echo $fbcomments; ?></textarea></p>
+ 	<h3>Choose the image displayed to the non-fans of your page</h3>
+ 	<p>Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.</p>
+ 	<h3>Add content for your fans to see</h3>
+ 	<p>In the content area, add the content you want your fans to see. Publish, copy the URL of the created page to your clipboard: <br/><br/><code><?php the_permalink(); ?></code></p>
+ 	<p>Back to Facebook and your application settings, in the <strong>Facebook integration tab</strong>, scroll to the bottom and paste your URL into the <em>Tab URL</em> box.</p>
+ 	<p>And that's it!</p>
+ 	<?php
 }
  
 function werewp_save_details(){
