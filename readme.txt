@@ -4,7 +4,7 @@ Donate link: http://jeremy.tagada.hu
 Tags: facebook, application, campaign, tab, custom post type, custom fields
 Requires at least: 3.0
 Tested up to: 3.2
-Stable tag: 0.3
+Stable tag: 0.3.1
 
 Create custom tabs for your Facebook pages, hosted on your WordPress blog.
 
@@ -56,6 +56,9 @@ One of the images you have added to your page is too large to fit in the page. A
 The only way to solve the issue is to buy an SSL certificate for your domain, and once set, fill in the secure URL for your tab in the applications settings.
 
 == Changelog ==
+
+= 0.3.1 =
+* Changing version number in plugin root file
 
 = 0.3 =
 * Added fixed embed width
