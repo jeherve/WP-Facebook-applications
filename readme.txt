@@ -16,8 +16,9 @@ Thus you can integrate text, pictures, videos, comment forms, hidden for people 
 
 Thus plugin allows you to create as many tabs as you wish through WordPress.
 
-For more information, visit: 
-* [Page officielle - FR](http://jeremy.tagada.hu/extension-wp-facebook-applications/ "Extension : WP Facebook Applications") 
+For more information, check the documentation:
+- [Documentation - EN](http://www.werewp.com/my-plugins/wp-facebook-applications/ "WP Facebook Applications documentation")
+- [Documentation - FR](http://jeremy.tagada.hu/extension-wp-facebook-applications/ "Extension : WP Facebook Applications") 
 
 This plugin is a work in progress. Do not hesitate to send me your remarks, suggestions and ideas for the future version of this plugin.
 
