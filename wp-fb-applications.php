@@ -113,7 +113,7 @@ function werewp_fbappappparameters() {
  	<p><label><strong>Number of Facebook comments displayed</strong> (leave empty if you do not wish to have this feature enabled):</label><br />
  	<textarea cols="1" rows="1" name="fbcomments"><?php echo $fbcomments; ?></textarea></p>
  	<h3>Choose the image displayed to the non-fans of your page</h3>
- 	<p>Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.</p>
+ 	<p>Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.<br/>If you don't want any specific content for the non-fans, simply leave the Featured Image empty, and all viewers will see all the content.</p>
  	<h3>Add content for your fans to see</h3>
  	<p>In the content area, add the content you want your fans to see. Publish, copy the URL of the created page to your clipboard: <br/><br/><code><?php the_permalink(); ?></code></p>
  	<p>Back to Facebook and your application settings, in the <strong>Facebook integration tab</strong>, scroll to the bottom and paste your URL into the <em>Tab URL</em> box.</p>
