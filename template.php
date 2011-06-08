@@ -60,12 +60,22 @@
 	</div><!-- .container -->
 
 <?php else : ?>
-	
-	<div class="photo clearfix">
 
-		<?php the_post_thumbnail( 'fb-nonfans' ); ?>
+	<?php if ( has_post_thumbnail() ) : ?>
 	
-	</div><!-- .photo -->
+		<div class="photo clearfix">	
+			<?php the_post_thumbnail( 'fb-nonfans' ); ?>	
+		</div><!-- .photo -->
+	
+	<?php else : ?>
+	
+		<div class="container clearfix">	
+			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			<?php the_content(); ?>
+			</div>	
+		</div><!-- .container -->
+	
+	<?php endif; ?>	
 
 <?php endif; ?>	
 
