@@ -29,8 +29,10 @@ License: GPL2
 define( 'WPFBAPPS_URL', plugin_dir_url(__FILE__) );
 
 // Internationalization
-if(!load_plugin_textdomain('wp-facebook-applications','/wp-content/languages/'))
-	load_plugin_textdomain('wp-facebook-applications', WPFBAPPS_URL . '/languages/');
+function werewp_fbapp_load_plugin_textdomain() {
+	load_plugin_textdomain( 'werewpfbapps', false, 'wp-facebook-applications/languages' );
+}
+add_action( 'init', 'werewp_fbapp_load_plugin_textdomain' );
 
 /*
  * Create a new post type for Facebook iFrame applications
@@ -41,15 +43,15 @@ function werewp_fbapp_post_type() {
 	register_post_type( 'werewp_fbapp',
 		array(
 			'labels' => array(
-				'name' => __( 'Applications', 'wp-facebook-applications' ),
-				'singular_name' => __( 'Application', 'wp-facebook-applications' ),
-				'add_new' => __( 'Add New', 'wp-facebook-applications' ),
-				'add_new_item' => __( 'Add New Facebook tab', 'wp-facebook-applications' ),
-				'edit' => __( 'Edit', 'wp-facebook-applications' ),
-				'edit_item' => __( 'Edit Facebook tab', 'wp-facebook-applications' ),
-				'view' => __( 'View Facebook tab', 'wp-facebook-applications' )
+				'name' => __( 'Applications', 'werewpfbapps' ),
+				'singular_name' => __( 'Application', 'werewpfbapps' ),
+				'add_new' => __( 'Add New', 'werewpfbapps' ),
+				'add_new_item' => __( 'Add New Facebook tab', 'werewpfbapps' ),
+				'edit' => __( 'Edit', 'werewpfbapps' ),
+				'edit_item' => __( 'Edit Facebook tab', 'werewpfbapps' ),
+				'view' => __( 'View Facebook tab', 'werewpfbapps' )
 			),
-		'description' => __( 'The Applications post type allows you to create new pages with a custom style and custom options. Creating new applications will allow you to create custom tabs on your Facebook pages.', 'wp-facebook-applications' ),
+		'description' => __( 'The Applications post type allows you to create new pages with a custom style and custom options. Creating new applications will allow you to create custom tabs on your Facebook pages.', 'werewpfbapps' ),
 		'public' => true,
 		'has_archive' => true,
 		'exclude_from_search' => true,
@@ -86,7 +88,7 @@ function werewp_fbapp_title( $title ){
      $screen = get_current_screen();
  
      if  ( 'werewp_fbapp' == $screen->post_type ) {
-          $title = __( 'Enter the name of your Facebook tab', 'wp-facebook-applications' );
+          $title = __( 'Enter the name of your Facebook tab', 'werewpfbapps' );
      }
  
      return $title;
@@ -106,24 +108,24 @@ function werewp_fbappappparameters() {
  	$appsecret = $custom['appsecret'][0];
  	$fbcomments = $custom['fbcomments'][0];
  	?>
- 	<h3><?php _e( 'Create your application on Facebook', 'wp-facebook-applications' ); ?></h3>
-	<p><?php _e( 'Before to start creating content, you must create an application on Facebook:', 'wp-facebook-applications' ); ?>
-	 <a href="http://www.facebook.com/developers/createapp.php" target="_blank"><?php _e( 'Create application.', 'wp-facebook-applications' ); ?></a> 
-	 <?php _e( 'Once it is done, provide a description and icons to that application. Then, in the <strong>Web Site</strong> tab, fill in with your website\'s URL.', 'wp-facebook-applications'); ?></p>
-	<h3><?php _e( 'Fill it application details', 'wp-facebook-applications' ); ?></h3>
-	<p><?php _e( 'You now have the necessary information to fill in the parameters below:', 'wp-facebook-applications' ); ?></p>
- 	<p><label><strong><?php _e( 'Application ID:', 'wp-facebook-applications' ); ?></strong></label><br />
+ 	<h3><?php _e( 'Create your application on Facebook', 'werewpfbapps' ); ?></h3>
+	<p><?php _e( 'Before to start creating content, you must create an application on Facebook:', 'werewpfbapps' ); ?>
+	 <a href="http://www.facebook.com/developers/createapp.php" target="_blank"><?php _e( 'Create application.', 'werewpfbapps' ); ?></a> 
+	 <?php _e( 'Once it is done, provide a description and icons to that application. Then, in the <strong>Web Site</strong> tab, fill in with your website\'s URL.', 'werewpfbapps'); ?></p>
+	<h3><?php _e( 'Fill it application details', 'werewpfbapps' ); ?></h3>
+	<p><?php _e( 'You now have the necessary information to fill in the parameters below:', 'werewpfbapps' ); ?></p>
+ 	<p><label><strong><?php _e( 'Application ID:', 'werewpfbapps' ); ?></strong></label><br />
  	<textarea cols="50" rows="1" name="appid"><?php echo $appid; ?></textarea></p>
- 	<p><label><strong><?php _e( 'Application Secret:', 'wp-facebook-applications' ); ?></strong></label><br />
+ 	<p><label><strong><?php _e( 'Application Secret:', 'werewpfbapps' ); ?></strong></label><br />
  	<textarea cols="50" rows="1" name="appsecret"><?php echo $appsecret; ?></textarea></p>
- 	<p><label><strong><?php _e( 'Number of Facebook comments displayed</strong> (leave empty if you do not wish to have this feature enabled):', 'wp-facebook-applications' ); ?></label><br />
+ 	<p><label><strong><?php _e( 'Number of Facebook comments displayed</strong> (leave empty if you do not wish to have this feature enabled):', 'werewpfbapps' ); ?></label><br />
  	<textarea cols="1" rows="1" name="fbcomments"><?php echo $fbcomments; ?></textarea></p>
- 	<h3><?php _e( 'Choose the image displayed to the non-fans of your page', 'wp-facebook-applications' ); ?></h3>
- 	<p><?php _e( 'Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.<br/>If you don\'t want any specific content for the non-fans, simply leave the Featured Image empty, and all viewers will see all the content.', 'wp-facebook-applications' ); ?></p>
- 	<h3><?php _e( 'Add content for your fans to see', 'wp-facebook-applications' ); ?></h3>
- 	<p><?php _e( 'In the content area, add the content you want your fans to see. Publish, copy the URL of the created page to your clipboard:', 'wp-facebook-applications' ); ?><br/><br/><code><?php the_permalink(); ?></code></p>
- 	<p><?php _e( 'Back to Facebook and your application settings, in the <strong>Facebook integration tab</strong>, scroll to the bottom and paste your URL into the <em>Tab URL</em> box.', 'wp-facebook-applications' ); ?></p>
- 	<p><?php _e( 'And that\'s it!', 'wp-facebook-applications' ); ?></p>
+ 	<h3><?php _e( 'Choose the image displayed to the non-fans of your page', 'werewpfbapps' ); ?></h3>
+ 	<p><?php _e( 'Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.<br/>If you don\'t want any specific content for the non-fans, simply leave the Featured Image empty, and all viewers will see all the content.', 'werewpfbapps' ); ?></p>
+ 	<h3><?php _e( 'Add content for your fans to see', 'werewpfbapps' ); ?></h3>
+ 	<p><?php _e( 'In the content area, add the content you want your fans to see. Publish, copy the URL of the created page to your clipboard:', 'werewpfbapps' ); ?><br/><br/><code><?php the_permalink(); ?></code></p>
+ 	<p><?php _e( 'Back to Facebook and your application settings, in the <strong>Facebook integration tab</strong>, scroll to the bottom and paste your URL into the <em>Tab URL</em> box.', 'werewpfbapps' ); ?></p>
+ 	<p><?php _e( 'And that\'s it!', 'werewpfbapps' ); ?></p>
  	<?php
 }
  
@@ -140,9 +142,9 @@ add_action( 'save_post', 'werewp_save_details' );
 function werewp_fbapp_edit_columns($columns){
   $columns = array(
     'cb' => '<input type=\"checkbox\" />',
-    'title' => __( 'Application title', 'wp-facebook-applications' ),
-    'appid' => __( 'Application ID', 'wp-facebook-applications' ),
-    'appsecret' => __( 'Application secret', 'wp-facebook-applications' ),
+    'title' => __( 'Application title', 'werewpfbapps' ),
+    'appid' => __( 'Application ID', 'werewpfbapps' ),
+    'appsecret' => __( 'Application secret', 'werewpfbapps' ),
   );
  
   return $columns;
