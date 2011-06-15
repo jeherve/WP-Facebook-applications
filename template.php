@@ -104,7 +104,7 @@
       // Do things that will sometimes call sizeChangeCallback()
       function sizeChangeCallback() {
 			FB.Canvas.setAutoResize();
-		}
+	  }
 
       (function() {
         var e = document.createElement('script');

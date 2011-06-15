@@ -86,7 +86,7 @@ function werewp_fbapp_title( $title ){
      $screen = get_current_screen();
  
      if  ( 'werewp_fbapp' == $screen->post_type ) {
-          $title = 'Enter the name of your Facebook tab';
+          $title = __( 'Enter the name of your Facebook tab', 'wp-facebook-applications' );
      }
  
      return $title;
@@ -140,9 +140,9 @@ add_action( 'save_post', 'werewp_save_details' );
 function werewp_fbapp_edit_columns($columns){
   $columns = array(
     'cb' => '<input type=\"checkbox\" />',
-    'title' => 'Application title',
-    'appid' => 'Application ID',
-    'appsecret' => 'Application secret',
+    'title' => __( 'Application title', 'wp-facebook-applications' ),
+    'appid' => __( 'Application ID', 'wp-facebook-applications' ),
+    'appsecret' => __( 'Application secret', 'wp-facebook-applications' ),
   );
  
   return $columns;
