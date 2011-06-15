@@ -71,7 +71,7 @@ add_post_type_support( 'werewp_fbapp', 'thumbnail' );
 function werewp_fbapps_thumbnails() {
 	add_theme_support( 'post-thumbnails' );
 	if ( function_exists( 'add_image_size' ) ) {
-    	add_image_size( 'fb-nonfans', 520, 2000, true ); // Facebook applications thumbnails
+    	add_image_size( 'fb-nonfans', 520, 2000, true );
 	}
 }
 add_action( 'after_setup_theme', 'werewp_fbapps_thumbnails' );
