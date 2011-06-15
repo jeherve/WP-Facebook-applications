@@ -28,6 +28,10 @@ License: GPL2
 
 define( 'WPFBAPPS_URL', plugin_dir_url(__FILE__) );
 
+// Internationalization
+if(!load_plugin_textdomain('wp-facebook-applications','/wp-content/languages/'))
+	load_plugin_textdomain('wp-facebook-applications', WPFBAPPS_URL . '/languages/');
+
 /*
  * Create a new post type for Facebook iFrame applications
  * within our theme
@@ -102,22 +106,24 @@ function werewp_fbappappparameters() {
  	$appsecret = $custom['appsecret'][0];
  	$fbcomments = $custom['fbcomments'][0];
  	?>
- 	<h3>Create your application on Facebook</h3>
-	<p>Before to start creating content, you must create an application on Facebook : <a href="http://www.facebook.com/developers/createapp.php" target="_blank">Create application</a>. Once it is done, provide a description and icons to that application. Then, in the <strong>Web Site</strong> tab, fill in with your website's URL.</p>
-	<h3>Fill it application details</h3>
-	<p>You now have the necessary information to fill in the parameters below:</p>
- 	<p><label><strong>Application ID:</strong></label><br />
+ 	<h3><?php _e( 'Create your application on Facebook', 'wp-facebook-applications' ); ?></h3>
+	<p><?php _e( 'Before to start creating content, you must create an application on Facebook:', 'wp-facebook-applications' ); ?>
+	 <a href="http://www.facebook.com/developers/createapp.php" target="_blank"><?php _e( 'Create application.', 'wp-facebook-applications' ); ?></a> 
+	 <?php _e( 'Once it is done, provide a description and icons to that application. Then, in the <strong>Web Site</strong> tab, fill in with your website\'s URL.', 'wp-facebook-applications'); ?></p>
+	<h3><?php _e( 'Fill it application details', 'wp-facebook-applications' ); ?></h3>
+	<p><?php _e( 'You now have the necessary information to fill in the parameters below:', 'wp-facebook-applications' ); ?></p>
+ 	<p><label><strong><?php _e( 'Application ID:', 'wp-facebook-applications' ); ?></strong></label><br />
  	<textarea cols="50" rows="1" name="appid"><?php echo $appid; ?></textarea></p>
- 	<p><label><strong>Application Secret:</strong></label><br />
+ 	<p><label><strong><?php _e( 'Application Secret:', 'wp-facebook-applications' ); ?></strong></label><br />
  	<textarea cols="50" rows="1" name="appsecret"><?php echo $appsecret; ?></textarea></p>
- 	<p><label><strong>Number of Facebook comments displayed</strong> (leave empty if you do not wish to have this feature enabled):</label><br />
+ 	<p><label><strong><?php _e( 'Number of Facebook comments displayed</strong> (leave empty if you do not wish to have this feature enabled):', 'wp-facebook-applications' ); ?></label><br />
  	<textarea cols="1" rows="1" name="fbcomments"><?php echo $fbcomments; ?></textarea></p>
- 	<h3>Choose the image displayed to the non-fans of your page</h3>
- 	<p>Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.<br/>If you don't want any specific content for the non-fans, simply leave the Featured Image empty, and all viewers will see all the content.</p>
- 	<h3>Add content for your fans to see</h3>
- 	<p>In the content area, add the content you want your fans to see. Publish, copy the URL of the created page to your clipboard: <br/><br/><code><?php the_permalink(); ?></code></p>
- 	<p>Back to Facebook and your application settings, in the <strong>Facebook integration tab</strong>, scroll to the bottom and paste your URL into the <em>Tab URL</em> box.</p>
- 	<p>And that's it!</p>
+ 	<h3><?php _e( 'Choose the image displayed to the non-fans of your page', 'wp-facebook-applications' ); ?></h3>
+ 	<p><?php _e( 'Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.<br/>If you don\'t want any specific content for the non-fans, simply leave the Featured Image empty, and all viewers will see all the content.', 'wp-facebook-applications' ); ?></p>
+ 	<h3><?php _e( 'Add content for your fans to see', 'wp-facebook-applications' ); ?></h3>
+ 	<p><?php _e( 'In the content area, add the content you want your fans to see. Publish, copy the URL of the created page to your clipboard:', 'wp-facebook-applications' ); ?><br/><br/><code><?php the_permalink(); ?></code></p>
+ 	<p><?php _e( 'Back to Facebook and your application settings, in the <strong>Facebook integration tab</strong>, scroll to the bottom and paste your URL into the <em>Tab URL</em> box.', 'wp-facebook-applications' ); ?></p>
+ 	<p><?php _e( 'And that\'s it!', 'wp-facebook-applications' ); ?></p>
  	<?php
 }
  
