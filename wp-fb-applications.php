@@ -41,15 +41,15 @@ function werewp_fbapp_post_type() {
 	register_post_type( 'werewp_fbapp',
 		array(
 			'labels' => array(
-				'name' => __( 'Applications' ),
-				'singular_name' => __( 'Application' ),
-				'add_new' => __( 'Add New' ),
-				'add_new_item' => __( 'Add New Facebook tab' ),
-				'edit' => __( 'Edit' ),
-				'edit_item' => __( 'Edit Facebook tab' ),
-				'view' => __( 'View Facebook tab' )
+				'name' => __( 'Applications', 'wp-facebook-applications' ),
+				'singular_name' => __( 'Application', 'wp-facebook-applications' ),
+				'add_new' => __( 'Add New', 'wp-facebook-applications' ),
+				'add_new_item' => __( 'Add New Facebook tab', 'wp-facebook-applications' ),
+				'edit' => __( 'Edit', 'wp-facebook-applications' ),
+				'edit_item' => __( 'Edit Facebook tab', 'wp-facebook-applications' ),
+				'view' => __( 'View Facebook tab', 'wp-facebook-applications' )
 			),
-		'description' => __( 'The Applications post type allows you to create new pages with a custom style and custom options. Creating new applications will allow you to create custom tabs on your Facebook pages.' ),
+		'description' => __( 'The Applications post type allows you to create new pages with a custom style and custom options. Creating new applications will allow you to create custom tabs on your Facebook pages.', 'wp-facebook-applications' ),
 		'public' => true,
 		'has_archive' => true,
 		'exclude_from_search' => true,
