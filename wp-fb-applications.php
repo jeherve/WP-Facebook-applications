@@ -79,7 +79,7 @@ add_action( 'after_setup_theme', 'werewp_fbapps_thumbnails' );
 
 /*
  * Customize our Edit Custom type panel to be able to
- * entre Facebook application settings
+ * include Facebook application settings
  */
 // Change Enter the title prompt on page
 function werewp_fbapp_title( $title ){
