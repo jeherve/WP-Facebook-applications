@@ -97,7 +97,7 @@ add_filter( 'enter_title_here', 'werewp_fbapp_title' );
 
 // Add metaboxes with custom fields
 function werewp_fbapps_metaboxes(){
-	add_meta_box( 'appid_meta', 'Application parameters', 'werewp_fbappappparameters', 'werewp_fbapp', 'advanced', 'core' );
+	add_meta_box( 'appid_meta', __( 'Application parameters', 'werewpfbapps'), 'werewp_fbappappparameters', 'werewp_fbapp', 'advanced', 'core' );
 }
 add_action( 'admin_init', 'werewp_fbapps_metaboxes' );
  
