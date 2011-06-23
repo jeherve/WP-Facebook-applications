@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WP Facebook applications\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-15 21:52+0100\n"
-"PO-Revision-Date: 2011-06-15 22:10+0100\n"
+"PO-Revision-Date: 2011-06-16 09:17+0100\n"
 "Last-Translator: Jeremy Herve <jeremy@tagada.hu>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,11 +35,11 @@ msgstr "Szerkesztés"
 
 #: ../wp-fb-applications.php:51
 msgid "Edit Facebook tab"
-msgstr "Facebook szerkesztés"
+msgstr "Facebook fül szerkesztés"
 
 #: ../wp-fb-applications.php:52
 msgid "View Facebook tab"
-msgstr ""
+msgstr "Facebook fül megtekintés"
 
 #: ../wp-fb-applications.php:54
 msgid "The Applications post type allows you to create new pages with a custom style and custom options. Creating new applications will allow you to create custom tabs on your Facebook pages."
