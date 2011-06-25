@@ -141,7 +141,7 @@ add_action( 'save_post', 'werewp_save_details' );
 // Add columns to Edit panel
 function werewp_fbapp_edit_columns($columns){
   $columns = array(
-    'cb' => '<input type=\"checkbox\" />',
+    'cb' => '<input type="checkbox" />',
     'title' => __( 'Application title', 'werewpfbapps' ),
     'appid' => __( 'Application ID', 'werewpfbapps' ),
     'appsecret' => __( 'Application secret', 'werewpfbapps' ),
