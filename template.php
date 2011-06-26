@@ -43,6 +43,9 @@
 	$locale = $signed_request["user"]["locale"];
 
 ?> 
+
+<a href='#' onclick='streamPublish(); return false;'>message you prefer</a>
+
 <?php if ($like_status) : ?>
 	
 	<div class="container clearfix">
