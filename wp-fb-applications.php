@@ -28,6 +28,9 @@ License: GPL2
 
 define( 'WPFBAPPS_URL', plugin_dir_url(__FILE__) );
 
+// Shortcodes
+require_once( 'shortcodes.php' );
+
 // Internationalization
 function werewp_fbapp_load_plugin_textdomain() {
 	load_plugin_textdomain( 'werewpfbapps', false, 'wp-facebook-applications/languages' );

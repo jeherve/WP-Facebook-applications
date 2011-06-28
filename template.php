@@ -44,8 +44,6 @@
 
 ?> 
 
-<a href='#' onclick='streamPublish(); return false;'>message you prefer</a>
-
 <?php if ($like_status) : ?>
 	
 	<div class="container clearfix">
@@ -86,35 +84,62 @@
 
 <div id="fb-root"></div>
     <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId   : '<?php echo $facebook->getAppId(); ?>',
-          session : <?php echo json_encode($session); ?>, // don't refetch the session when PHP already has it
-          status  : true, // check login status
-          cookie  : true, // enable cookies to allow the server to access the session
-          xfbml   : true // parse XFBML
-        });
+		window.fbAsyncInit = function() {
+        	FB.init({
+          		appId   : '<?php echo $facebook->getAppId(); ?>',
+          		session : <?php echo json_encode($session); ?>, // don't refetch the session when PHP already has it
+          		status  : true, // check login status
+          		cookie  : true, // enable cookies to allow the server to access the session
+          		xfbml   : true // parse XFBML
+        	});
 
-        // whenever the user logs in, we refresh the page
-        FB.Event.subscribe('auth.login', function() {
-          window.location.reload();
-        });
-        
-        // Auto resize of the page
-        FB.Canvas.setAutoResize();
-      };
+        	// whenever the user logs in, we refresh the page
+        	FB.Event.subscribe('auth.login', function() {
+          		window.location.reload();
+       		});
+       
+       		// Auto resize of the page
+        	FB.Canvas.setAutoResize();
+      	};
       
-      // Do things that will sometimes call sizeChangeCallback()
-      function sizeChangeCallback() {
+		function sizeChangeCallback() {
 			FB.Canvas.setAutoResize();
-	  }
+	  	}
+	  
+	  	// fb.ui features
+	  	function streamPublish() {
+			FB.ui({ 
+				method: 'stream.publish',
+				messagePrompt: 'Do you want to share this page to your Facebook Wall?',
+				userMessage: 'Check these amazing JS SDK tutorials',
+				message: ' ',
+				name: 'my great web site',
+				caption: 'web design',
+				description: ( ' The quick brown fox ' + ' jumps over the lazy dog. ' + ' English-language pangram ' ),
+				link: 'http://www.my url',
+				picture: 'http://www.my image url',
+				actions: [{ 
+					name: 'visit now', 
+					link: 'http://www.my url'
+				}],
+				user_message_prompt: 'Share'
+			},
+			function(response) {
+				if (response && response.post_id) {
+					//alert('thanks for sharing');
+				} else {
+					//alert('Post was not published.');
+				}
+			}
+			);
+		}
 
-      (function() {
+      	(function() {
         var e = document.createElement('script');
         e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
         e.async = true;
         document.getElementById('fb-root').appendChild(e);
-      }());
+      	}());
     </script>    
 
 <?php wp_footer(); ?>
