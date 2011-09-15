@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Facebook applications\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-15 21:52+0100\n"
+"PO-Revision-Date: 2011-06-15 21:55+0100\n"
+"Last-Translator: Jeremy Herve <jeremy@tagada.hu>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../wp-fb-applications.php:46
+msgid "Applications"
+msgstr "Applications"
+
+#: ../wp-fb-applications.php:47
+msgid "Application"
+msgstr "Application"
+
+#: ../wp-fb-applications.php:48
+msgid "Add New"
+msgstr "Ajouter"
+
+#: ../wp-fb-applications.php:49
+msgid "Add New Facebook tab"
+msgstr "Ajouter un nouvel onglet Facebook"
+
+#: ../wp-fb-applications.php:50
+msgid "Edit"
+msgstr "Editer"
+
+#: ../wp-fb-applications.php:51
+msgid "Edit Facebook tab"
+msgstr "Editer votre onglet Facebook"
+
+#: ../wp-fb-applications.php:52
+msgid "View Facebook tab"
+msgstr "Voir"
+
+#: ../wp-fb-applications.php:54
+msgid "The Applications post type allows you to create new pages with a custom style and custom options. Creating new applications will allow you to create custom tabs on your Facebook pages."
+msgstr "Le nouveau module Applications vous permet de créer de nouvelles pages avec un style et des options personnalisés. Créer de nouvelles applications ici vous permettra ensuite de créer des onglets personnalisés sur les pages Facebook que vous administrez."
+
+#: ../wp-fb-applications.php:91
+msgid "Enter the name of your Facebook tab"
+msgstr "Entrez le nom de votre onglet Facebook"
+
+#: ../wp-fb-applications.php:100
+msgid "Application parameters"
+msgstr "Paramètres de l'application"
+
+#: ../wp-fb-applications.php:111
+msgid "Create your application on Facebook"
+msgstr "Créez votre application sur Facebook"
+
+#: ../wp-fb-applications.php:112
+msgid "Before to start creating content, you must create an application on Facebook:"
+msgstr "Avant de commencer à intégrer votre contenu, vous devez créer une application sur Facebook :"
+
+#: ../wp-fb-applications.php:113
+msgid "Create application."
+msgstr "Créer votre application."
+
+#: ../wp-fb-applications.php:114
+msgid "Once it is done, provide a description and icons to that application. Then, in the <strong>Web Site</strong> tab, fill in with your website's URL."
+msgstr "Une fois que cela est fait, renseignez les champs de description et ajoutez des icones à votre application. Ensuite, dans l'onglet <strong>Web Site</strong>, renseignez l'URL de votre site."
+
+#: ../wp-fb-applications.php:115
+msgid "Fill it application details"
+msgstr "Renseignez les détails de votre application Facebook"
+
+#: ../wp-fb-applications.php:116
+msgid "You now have the necessary information to fill in the parameters below:"
+msgstr "Vous avez maintenant les informations nécessaires pour remplir les paramètres ci-dessous :"
+
+#: ../wp-fb-applications.php:117
+msgid "Application ID:"
+msgstr "Application ID :"
+
+#: ../wp-fb-applications.php:119
+msgid "Application Secret:"
+msgstr "Application Secret :"
+
+#: ../wp-fb-applications.php:121
+msgid "Number of Facebook comments displayed</strong> (leave empty if you do not wish to have this feature enabled):"
+msgstr "Nombre de commentaires Facebook affichés</strong> (ne renseignez pas cette option si vous ne souhaitez pas activer cette fonctionnalité) :"
+
+#: ../wp-fb-applications.php:123
+msgid "Choose the image displayed to the non-fans of your page"
+msgstr "Choisissez l'image affichée aux non-fans de votre page"
+
+#: ../wp-fb-applications.php:124
+msgid "Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.<br/>If you don't want any specific content for the non-fans, simply leave the Featured Image empty, and all viewers will see all the content."
+msgstr "Les utilisateurs de Facebook qui ne sont pas fans de votre page verront une simple image, que vous pouvez ajouter dans le champ <strong>Image à la Une</strong> de cette page.<br/>Si vous ne voulez pas faire de séparation entre les fans et les non-fans, ne renseignez pas cette option, et tous les visiteurs de votre onglet verront le contenu de votre page."
+
+#: ../wp-fb-applications.php:125
+msgid "Add content for your fans to see"
+msgstr "Ajoutez le contenu de votre page"
+
+#: ../wp-fb-applications.php:126
+msgid "In the content area, add the content you want your fans to see. Publish, copy the URL of the created page to your clipboard:"
+msgstr "Dans le champ réservé au contenu, ajoutez le contenu que vos fans verront sur votre onglet. Publiez, et copiez l'URL de la page créée :"
+
+#: ../wp-fb-applications.php:127
+msgid "Back to Facebook and your application settings, in the <strong>Facebook integration tab</strong>, scroll to the bottom and paste your URL into the <em>Tab URL</em> box."
+msgstr "Retournez maintenant aux paramètres de votre application sur Facebook, et dans l'onglet <strong>Facebook integration</strong>, allez au bas de la page et collez votre URL dans le champ <em>Tab URL</em>."
+
+#: ../wp-fb-applications.php:128
+msgid "And that's it!"
+msgstr "Et voilà !"
+
+#: ../wp-fb-applications.php:145
+msgid "Application title"
+msgstr "Titre de l'application"
+
+#: ../wp-fb-applications.php:146
+msgid "Application ID"
+msgstr "Application ID"
+
+#: ../wp-fb-applications.php:147
+msgid "Application secret"
+msgstr "Application secret"
+
