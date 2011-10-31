@@ -3,8 +3,8 @@ Contributors: hd-J
 Donate link: http://jeremy.tagada.hu
 Tags: facebook, application, campaign, tab, custom post type, custom fields
 Requires at least: 3.0
-Tested up to: 3.2
-Stable tag: 0.4
+Tested up to: 3.2.1
+Stable tag: 0.4.2
 
 Create custom tabs for your Facebook pages, hosted on your WordPress blog.
 
@@ -62,10 +62,16 @@ When viewing your [application settings page](http://www.facebook.com/developers
 
 == Changelog ==
 
+= 0.4.2 =
+* Update to the latest version of Facebook PHP SDK
+
+= 0.4.1 =
+* Solve bug causing TinyMCE buttons disappearing
+
 = 0.4 =
 * i18n of the plugin
 * Plugin is now translated to French and Hungarian
-* Added possibility not to filter content for non-fans
+* Add possibility not to filter content for non-fans
 
 = 0.3.1 =
 * Changing version number in plugin root file
