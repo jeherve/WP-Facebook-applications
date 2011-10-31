@@ -89,7 +89,8 @@
           session : <?php echo json_encode($session); ?>, // don't refetch the session when PHP already has it
           status  : true, // check login status
           cookie  : true, // enable cookies to allow the server to access the session
-          xfbml   : true // parse XFBML
+          xfbml   : true, // parse XFBML
+          oauth   : true
         });
 
         // whenever the user logs in, we refresh the page
