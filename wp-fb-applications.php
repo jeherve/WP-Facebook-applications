@@ -191,7 +191,7 @@ add_action( 'template_redirect', 'werewp_fbapp_template' );
 function werewp_fbapps_style() {
 	$fbapps_style = WPFBAPPS_URL . 'css/fblayout.css';
 	
-	if ( 'werewp_fbapp' == get_post_type() ) { 
+	if ( 'werewp_fbapp' == get_post_type() && !is_admin() ) { 
 		wp_register_style('werewp-fbapps', $fbapps_style);
         wp_enqueue_style( 'werewp-fbapps');
 	}
