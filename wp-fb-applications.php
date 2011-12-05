@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP-Facebook applications
-Version: 0.4.3
+Version: 0.4.4
 Plugin URI: http://www.werewp.com/my-plugins/wp-facebook-applications/
 Description: Create custom tabs for your Facebook pages, hosted on your WordPress blog.
 Author: Jeremy Herve
@@ -129,10 +129,12 @@ function werewp_fbappappparameters() {
  
 function werewp_save_details(){
 	global $post;
- 
-	update_post_meta($post->ID, 'appid', $_POST['appid']);
-	update_post_meta($post->ID, 'appsecret', $_POST['appsecret']);
-	update_post_meta($post->ID, 'fbcomments', $_POST['fbcomments']);
+
+	if ( $post->post_type == 'werewp_fbapp' ) {
+		update_post_meta($post->ID, 'appid', $_POST['appid']);
+		update_post_meta($post->ID, 'appsecret', $_POST['appsecret']);
+		update_post_meta($post->ID, 'fbcomments', $_POST['fbcomments']);
+	}
 }
 add_action( 'save_post', 'werewp_save_details' );
 

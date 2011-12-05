@@ -4,7 +4,7 @@ Donate link: http://jeremy.tagada.hu
 Tags: facebook, application, campaign, tab, custom post type, custom fields
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 0.4.3
+Stable tag: 0.4.4
 
 Create custom tabs for your Facebook pages, hosted on your WordPress blog.
 
@@ -61,6 +61,9 @@ The only way to solve the issue is to buy an SSL certificate for your domain, an
 When viewing your [application settings page](http://www.facebook.com/developers/apps.php "Facebook Apps overview"), you will see a link to your Application's Profile Page. On that page, below the profile page, click the *Add to my page* link. Then you can add your application to any of the pages you administer.
 
 == Changelog ==
+
+= 0.4.4 =
+* Save Facebook App settings only for the plugin tabs, not for other custom post types 
 
 = 0.4.3 =
 * Fix styling issue on admin page with WordPress 3.3
