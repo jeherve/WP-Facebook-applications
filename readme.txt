@@ -62,6 +62,9 @@ When viewing your [application settings page](http://www.facebook.com/developers
 
 == Changelog ==
 
+= Current =
+* Hide WP admin bar on tab view
+
 = 0.4.4 =
 * Save Facebook App settings only for the plugin tabs, not for other custom post types 
 
