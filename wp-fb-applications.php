@@ -5,10 +5,10 @@ Version: 0.4.4
 Plugin URI: http://www.werewp.com/my-plugins/wp-facebook-applications/
 Description: Create custom tabs for your Facebook pages, hosted on your WordPress blog.
 Author: Jeremy Herve
-Author URI: http://jeremy.tagada.hu
+Author URI: http://jeremyherve.com
 License: GPL2
 */
-/*  Copyright 2011 Jeremy Herve (email : jeremy@tagada.hu)
+/*  Copyright 2012 Jeremy Herve (email : jeremy@jeremyherve.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -193,7 +193,7 @@ add_action( 'template_redirect', 'werewp_fbapp_template' );
 function werewp_fbapps_style() {
 	$fbapps_style = WPFBAPPS_URL . 'css/fblayout.css';
 	
-	if ( 'werewp_fbapp' == get_post_type() && !is_admin() ) { 
+	if ( 'werewp_fbapp' == get_post_type() && !is_admin() ) {
 		wp_register_style('werewp-fbapps', $fbapps_style);
         wp_enqueue_style( 'werewp-fbapps');
 	}

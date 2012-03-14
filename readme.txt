@@ -1,6 +1,6 @@
 === WP-Facebook applications ===
-Contributors: hd-J
-Donate link: http://jeremy.tagada.hu
+Contributors: jeherve, hd-J
+Donate link: http://jeremyherve.com
 Tags: facebook, application, campaign, tab, custom post type, custom fields
 Requires at least: 3.0
 Tested up to: 3.3
@@ -18,7 +18,7 @@ Thus plugin allows you to create as many tabs as you wish through WordPress.
 
 For more information, check the documentation:
 - [Documentation - EN](http://www.werewp.com/my-plugins/wp-facebook-applications/ "WP Facebook Applications documentation")
-- [Documentation - FR](http://jeremy.tagada.hu/extension-wp-facebook-applications/ "Extension : WP Facebook Applications") 
+- [Documentation - FR](http://jeremyherve.com/extension-wp-facebook-applications/ "Extension : WP Facebook Applications") 
 
 This plugin is a work in progress. Do not hesitate to send me your remarks, suggestions and ideas for the future version of this plugin.
 
@@ -61,9 +61,6 @@ The only way to solve the issue is to buy an SSL certificate for your domain, an
 When viewing your [application settings page](http://www.facebook.com/developers/apps.php "Facebook Apps overview"), you will see a link to your Application's Profile Page. On that page, below the profile page, click the *Add to my page* link. Then you can add your application to any of the pages you administer.
 
 == Changelog ==
-
-= Current =
-* Hide WP admin bar on tab view
 
 = 0.4.4 =
 * Save Facebook App settings only for the plugin tabs, not for other custom post types 

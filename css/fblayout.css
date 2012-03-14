@@ -152,8 +152,3 @@ h4 {
     font-size: 13px;
     font-weight: bold;
 }
-
-/* Hide WordPress admin bar at all times */
-.show-admin-bar {
-    display: none;
-}
