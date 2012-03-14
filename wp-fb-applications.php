@@ -60,9 +60,14 @@ function werewp_fbapp_post_type() {
 		'taxonomies' => array( 'app_id', 'app_secret', 'app_fbcomments' ),
 		)
 	);
-	flush_rewrite_rules();
 }
 add_action( 'init', 'werewp_fbapp_post_type' );
+
+// Flush rewrite rules when the plugin is activated
+function werewp_flush_rewrite() {
+	flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'werewp_flush_rewrite' );
 
 // Add support for thumbnails
 add_post_type_support( 'werewp_fbapp', 'thumbnail' );
