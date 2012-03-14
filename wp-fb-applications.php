@@ -91,10 +91,10 @@ add_action( 'admin_init', 'werewp_fbapps_metaboxes' );
  
 function werewp_fbappappparameters() {
   	global $post;
- 	$custom = get_post_custom($post->ID);
- 	$appid = $custom['appid'][0];
- 	$appsecret = $custom['appsecret'][0];
- 	$fbcomments = $custom['fbcomments'][0];
+  	
+  	if (isset($post)) {
+	 	$custom = get_post_custom($post->ID);
+	}
  	?>
  	<h3><?php _e( 'Create your application on Facebook', 'werewpfbapps' ); ?></h3>
 	<p><?php _e( 'Before to start creating content, you must create an application on Facebook:', 'werewpfbapps' ); ?>
@@ -103,11 +103,11 @@ function werewp_fbappappparameters() {
 	<h3><?php _e( 'Fill it application details', 'werewpfbapps' ); ?></h3>
 	<p><?php _e( 'You now have the necessary information to fill in the parameters below:', 'werewpfbapps' ); ?></p>
  	<p><label><strong><?php _e( 'Application ID:', 'werewpfbapps' ); ?></strong></label><br />
- 	<textarea cols="50" rows="1" name="appid"><?php echo $appid; ?></textarea></p>
+ 	<textarea cols="50" rows="1" name="appid"><?php if( isset( $custom["appid"][0] ) ) { print $custom["appid"][0]; } ?></textarea></p>
  	<p><label><strong><?php _e( 'Application Secret:', 'werewpfbapps' ); ?></strong></label><br />
- 	<textarea cols="50" rows="1" name="appsecret"><?php echo $appsecret; ?></textarea></p>
+ 	<textarea cols="50" rows="1" name="appsecret"><?php if( isset( $custom["appsecret"][0] ) ) { print $custom["appsecret"][0]; } ?></textarea></p>
  	<p><label><strong><?php _e( 'Number of Facebook comments displayed</strong> (leave empty if you do not wish to have this feature enabled):', 'werewpfbapps' ); ?></label><br />
- 	<textarea cols="1" rows="1" name="fbcomments"><?php echo $fbcomments; ?></textarea></p>
+ 	<textarea cols="1" rows="1" name="fbcomments"><?php if( isset( $custom["fbcomments"][0] ) ) { print $custom["fbcomments"][0]; } ?></textarea></p>
  	<h3><?php _e( 'Choose the image displayed to the non-fans of your page', 'werewpfbapps' ); ?></h3>
  	<p><?php _e( 'Facebook users who are not fans of your page will see a single image, that you input in the <strong>Featured image</strong> area of this page.<br/>If you don\'t want any specific content for the non-fans, simply leave the Featured Image empty, and all viewers will see all the content.', 'werewpfbapps' ); ?></p>
  	<h3><?php _e( 'Add content for your fans to see', 'werewpfbapps' ); ?></h3>
