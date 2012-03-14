@@ -86,7 +86,7 @@
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId      : '<?php echo $facebook->getAppId(); ?>',
-				channelUrl : '<?php echo plugins_url( 'WP-Facebook-applications/lib/channel.php' , __FILE__ ); ?>', // Channel File
+				channelUrl : '<?php echo plugins_url( 'wp-facebook-applications/lib/channel.php' , __FILE__ ); ?>', // Channel File
 				session    : <?php echo json_encode($session); ?>, // don't refetch the session when PHP already has it
 				status     : true, // check login status
 				cookie     : true, // enable cookies to allow the server to access the session
