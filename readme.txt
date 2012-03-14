@@ -54,7 +54,7 @@ One of the images you have added to your page is too large to fit in the page. A
 
 = When viewing my application tab on Facebook, I get a blank page, or a message telling me to switch to a HTTPS connection =
 
-The only way to solve the issue is to buy an SSL certificate for your domain, and once set, fill in the secure URL for your tab in the applications settings.
+You MUST have an SSL certificate for your domain, and once set, fill in the secure URL for your tab in the applications settings. You cannot create Facebook applications without it.
 
 = How do I add the application I just created to my page? =
 
