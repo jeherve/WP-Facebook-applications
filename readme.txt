@@ -22,7 +22,7 @@ For more information, check the documentation:
 
 This plugin is a work in progress. Do not hesitate to send me your remarks, suggestions and ideas for the future version of this plugin.
 
-Please note that this plugin uses the [Facebook PHP SDK](http://github.com/facebook/php-sdk "Facebook PHP SDK")
+Please note that this plugin uses the [Facebook PHP SDK](https://github.com/facebook/facebook-php-sdk "Facebook PHP SDK")
 
 == Installation ==
 
