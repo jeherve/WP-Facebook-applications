@@ -82,39 +82,41 @@
 <?php /* End loop */ endwhile; ?>
 
 <div id="fb-root"></div>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '<?php echo $facebook->getAppId(); ?>',
-          channelUrl : '<?php echo plugins_url(  'WP-Facebook-applications/lib/channel.php' , __FILE__ ); ?>', // Channel File
-          session    : <?php echo json_encode($session); ?>, // don't refetch the session when PHP already has it
-          status     : true, // check login status
-          cookie     : true, // enable cookies to allow the server to access the session
-          xfbml      : true, // parse XFBML
-          oauth      : true
-        });
-
-        // whenever the user logs in, we refresh the page
-        FB.Event.subscribe('auth.login', function() {
-          window.location.reload();
-        });
-        
-        // Auto resize of the page
-        FB.Canvas.setAutoResize();
-      };
-      
-      // Do things that will sometimes call sizeChangeCallback()
-      function sizeChangeCallback() {
+	<script type="text/javascript">
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '<?php echo $facebook->getAppId(); ?>',
+				channelUrl : '<?php echo plugins_url( 'WP-Facebook-applications/lib/channel.php' , __FILE__ ); ?>', // Channel File
+				session    : <?php echo json_encode($session); ?>, // don't refetch the session when PHP already has it
+				status     : true, // check login status
+				cookie     : true, // enable cookies to allow the server to access the session
+				xfbml      : true, // parse XFBML
+				oauth      : true
+			});
+		
+			// whenever the user logs in, we refresh the page
+			FB.Event.subscribe('auth.login', function() {
+				window.location.reload();
+			});
+			
+			// Auto resize of the page
 			FB.Canvas.setAutoResize();
-	  }
-
-      (function() {
-        var e = document.createElement('script');
-        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-        e.async = true;
-        document.getElementById('fb-root').appendChild(e);
-      }());
-    </script>    
+		};
+			
+		// Do things that will sometimes call sizeChangeCallback()
+		function sizeChangeCallback() {
+			FB.Canvas.setAutoResize();
+		}
+		
+		// Load SDK asynchronously
+		(function(d){
+			var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement('script'); js.id = id; js.async = true;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			ref.parentNode.insertBefore(js, ref);
+		}(document));
+	</script>
 
 <?php wp_footer(); ?>
 </body>
