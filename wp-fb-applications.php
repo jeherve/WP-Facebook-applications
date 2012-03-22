@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: WP-Facebook applications
-Version: 0.4.4
-Plugin URI: http://www.werewp.com/my-plugins/wp-facebook-applications/
+Version: 0.4.5
+Plugin URI: http://jeremyherve.com/extension-wp-facebook-applications/
 Description: Create custom tabs for your Facebook pages, hosted on your WordPress blog.
 Author: Jeremy Herve
 Author URI: http://jeremyherve.com
