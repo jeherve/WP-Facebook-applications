@@ -120,7 +120,7 @@ function werewp_fbappappparameters() {
 function werewp_save_details(){
 	global $post;
 
-	if ( $post->post_type == 'werewp_fbapp' ) {
+	if (isset($post) && $post->post_type == 'werewp_fbapp') {
 		update_post_meta($post->ID, 'appid', $_POST['appid']);
 		update_post_meta($post->ID, 'appsecret', $_POST['appsecret']);
 		update_post_meta($post->ID, 'fbcomments', $_POST['fbcomments']);
